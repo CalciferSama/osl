@@ -1,0 +1,343 @@
+user :
+lusrmgr.msc
+
+
+Clear Cmos
+
+Éteignez l'ordinateur : Assurez-vous que l'ordinateur est complètement éteint avant de commencer la procédure.
+
+Débranchez l'alimentation : Pour des raisons de sécurité, débranchez l'alimentation de l'ordinateur ou éteignez l'interrupteur d'alimentation sur l'alimentation électrique.
+
+Localisez le cavalier Clear CMOS : Sur la carte mère de votre ordinateur, recherchez le cavalier Clear CMOS. Il est généralement situé près de la pile CMOS et des connecteurs d'alimentation.
+
+Déplacez le cavalier : Le cavalier est normalement placé sur deux broches, avec un contact entre l'une des broches et un troisième pin adjacent. Pour effacer le CMOS, vous devez déplacer le cavalier de sa position normale (par exemple, reliant le premier et le deuxième pin) vers la position de réinitialisation (par exemple, reliant le deuxième et le troisième pin).
+
+Attendez quelques secondes : Laissez le cavalier dans cette position de réinitialisation pendant quelques secondes. Cela permettra de vider complètement les paramètres CMOS.
+
+Remettez le cavalier en place : Une fois que vous avez attendu suffisamment longtemps, replacez le cavalier dans sa position d'origine (par exemple, reliant le premier et le deuxième pin).
+
+Rebranchez l'alimentation : Rebranchez l'alimentation de l'ordinateur ou réactivez l'interrupteur d'alimentation.
+
+Allumez l'ordinateur : Allumez l'ordinateur comme vous le feriez normalement. Les paramètres CMOS seront maintenant réinitialisés aux valeurs par défaut.
+
+
+choisir l'os :
+
+Windows 7 :
+
+Date de sortie : 22 octobre 2009
+Processeur : 1 GHz ou plus rapide (32 bits ou 64 bits)
+Mémoire vive (RAM) : 1 Go pour la version 32 bits, 2 Go pour la version 64 bits
+Espace de stockage : 16 Go pour la version 32 bits, 20 Go pour la version 64 bits
+
+Windows 8 :
+
+Date de sortie : 26 octobre 2012
+Processeur : Processeur 1 GHz ou plus rapide compatible avec PAE, NX et SSE2
+Mémoire vive (RAM) : 1 Go pour la version 32 bits, 2 Go pour la version 64 bits
+Espace de stockage : 16 Go pour la version 32 bits, 20 Go pour la version 64 bits
+
+Windows 8.1 :
+
+Date de sortie : 17 octobre 2013
+Les spécifications sont similaires à celles de Windows 8.
+
+Windows 10 :
+
+Date de sortie : 29 juillet 2015
+Processeur : 1 GHz ou plus rapide avec prise en charge de PAE, NX et SSE2
+Mémoire vive (RAM) : 1 Go pour la version 32 bits, 2 Go pour la version 64 bits
+Espace de stockage : 16 Go pour la version 32 bits, 20 Go pour la version 64 bits
+
+Windows 11 :
+
+Date de sortie : 5 octobre 2021
+Processeur : Processeur 1 GHz ou plus rapide avec au moins 2 cœurs sur un système compatible 64 bits
+Mémoire vive (RAM) : 4 Go ou plus
+Espace de stockage : 64 Go ou plus
+
+
+Boot sur le disque c: 
+
+Redémarrez l'ordinateur : Assurez-vous que votre ordinateur est allumé, puis redémarrez-le.
+
+Accédez au BIOS : Pendant le processus de démarrage, appuyez sur la touche appropriée pour accéder au BIOS. Cette touche peut varier en fonction du fabricant de votre ordinateur, mais elle est souvent l'une des touches suivantes : Suppr, F2, F10, F12 ou Échap. Consultez le manuel de votre ordinateur pour connaître la touche spécifique.
+
+Naviguez vers l'onglet de démarrage : Une fois dans le BIOS, utilisez les touches fléchées de votre clavier pour naviguer jusqu'à l'onglet ou à la section qui contrôle l'ordre de démarrage. Cela peut être appelé "Boot", "Boot Order", "Boot Options" ou quelque chose de similaire.
+
+Sélectionnez le SSD comme premier périphérique de démarrage : Dans la liste des périphériques de démarrage, recherchez votre SSD (qui peut être répertorié sous le nom du fabricant du disque ou sous le nom du modèle) et déplacez-le vers le haut de la liste. Cela peut généralement être fait en appuyant sur une touche spécifique (par exemple, "+" ou "F5") pour déplacer le périphérique vers le haut.
+
+Enregistrez et quittez : Une fois que vous avez défini votre SSD comme premier périphérique de démarrage, enregistrez les modifications et quittez le BIOS. Cela peut impliquer d'appuyer sur une touche spécifique pour sauvegarder les paramètres et redémarrer.
+
+
+Ajout Compte admin lors de l'installation: 
+
+Choisissez le type d'installation : Sélectionnez l'option "Personnalisée (avancée)".
+
+Créez un compte administrateur : Sur l'écran où vous devez sélectionner où installer Windows, cliquez sur "Nouveau" pour créer un nouveau compte utilisateur. Vous pouvez également sélectionner un compte utilisateur existant si vous le souhaitez.
+
+Définissez le mot de passe : Après avoir créé le compte utilisateur, vous aurez la possibilité de définir un mot de passe pour ce compte. Saisissez le mot de passe que vous souhaitez utiliser et confirmez-le.
+
+Terminez l'installation : Une fois que vous avez créé le compte administrateur et défini le mot de passe, suivez les instructions à l'écran pour terminer l'installation de Windows.
+
+
+
+Formatage rapide lors de l'install 
+
+Démarrez à partir du support d'installation de Windows : Insérez le DVD d'installation de Windows ou connectez la clé USB contenant les fichiers d'installation de Windows, puis redémarrez votre ordinateur.
+
+Accédez à l'écran d'installation de Windows : Lors du démarrage, votre ordinateur peut vous demander d'appuyer sur une touche pour démarrer à partir du support d'installation. Faites-le pour démarrer le processus d'installation.
+
+Sélectionnez la langue et le format de l'heure et de la devise : Choisissez vos préférences linguistiques et régionales, puis cliquez sur "Suivant".
+
+Cliquez sur "Installer maintenant" : Sur l'écran principal de l'installation de Windows, cliquez sur le bouton "Installer maintenant".
+
+Acceptez les termes du contrat de licence : Lisez attentivement le contrat de licence de Microsoft, cochez la case "J'accepte les termes du contrat de licence", puis cliquez sur "Suivant".
+
+Sélectionnez le type d'installation : Sur l'écran "Quel type d'installation voulez-vous ?", choisissez "Personnalisée (avancée)".
+
+Sélectionnez le disque à formater : Vous verrez une liste de tous les disques disponibles sur votre ordinateur. Sélectionnez le disque que vous souhaitez formater en cliquant dessus.
+
+Initiez le formatage : Une fois que vous avez sélectionné le disque, vous verrez l'option "Format" en bas de la fenêtre. Cliquez dessus pour commencer le formatage.
+
+Confirmez le formatage : Une fenêtre de confirmation apparaîtra pour vous avertir que le formatage effacera toutes les données sur le disque. Confirmez en cliquant sur "OK" ou "Formater".
+
+Attendre la fin du formatage : Le processus de formatage commencera et vous verrez une barre de progression. Attendez que le processus soit terminé.
+
+Continuez l'installation : Une fois le formatage terminé, vous pouvez fermer la fenêtre de formatage et continuer l'installation de Windows en suivant les instructions à l'écran.
+
+
+
+Formatage rapide installation deja faite:
+
+Ouvrez le menu Démarrer et recherchez "Gestion des disques" ou appuyez sur les touches Windows + R, tapez "diskmgmt.msc" dans la boîte de dialogue Exécuter, puis appuyez sur Entrée.
+
+Dans la fenêtre Gestion des disques, faites un clic droit sur la partition que vous souhaitez formater, puis sélectionnez "Formater...".
+
+Assurez-vous que l'option "Formatage rapide" est cochée, puis choisissez le système de fichiers souhaité (généralement NTFS). Cliquez sur "OK" pour commencer le formatage.
+
+Attendez que le formatage soit terminé. Une fois terminé, vous pouvez fermer la fenêtre de Gestion des disques.
+
+
+
+Partitionnement pendant l'installation de Windows :
+
+Démarrer à partir du support d'installation de Windows : Insérez le DVD d'installation de Windows ou connectez la clé USB contenant les fichiers d'installation de Windows, puis redémarrez votre ordinateur.
+
+Accéder à l'écran de sélection des partitions : Lorsque vous arrivez à l'écran où vous devez choisir où installer Windows, vous verrez une liste des disques durs disponibles sur votre ordinateur.
+
+Sélectionner le disque dur : Sélectionnez le disque dur sur lequel vous souhaitez installer Windows (généralement le disque C:). Si vous avez besoin de créer des partitions, sélectionnez "Options de lecteur (avancé)" ou "Nouveau" selon la version de Windows.
+
+Créer une partition pour le système (C:) : Si vous souhaitez diviser votre disque dur en plusieurs partitions, créez une nouvelle partition en sélectionnant l'espace non alloué et en cliquant sur "Nouveau". Spécifiez la taille de la partition souhaitée (par exemple, 45 Go pour la partition système) et suivez les instructions pour terminer la création de la partition.
+
+Créer une partition pour les données (D:) : Une fois la partition système créée, sélectionnez à nouveau l'espace non alloué restant et cliquez sur "Nouveau". Spécifiez la taille de la partition de données (qui sera D:) et suivez les instructions pour terminer la création de la partition.
+
+Installer Windows : Une fois que vous avez créé les partitions souhaitées, sélectionnez la partition système (C:) comme destination pour l'installation de Windows et suivez les instructions pour terminer l'installation.
+
+
+
+Partitionnement en dehors de l'installation de Windows (après l'installation) :
+Ouvrir Gestion des disques : Utilisez la méthode appropriée pour ouvrir l'outil Gestion des disques, comme décrit précédemment.
+
+Réduire la taille de la partition existante (le cas échéant) : Si vous avez déjà une seule partition occupant tout l'espace disque, vous devrez peut-être la réduire pour libérer de l'espace pour les autres partitions. Pour ce faire, cliquez avec le bouton droit sur la partition existante et sélectionnez "Réduire le volume". Spécifiez la taille que vous souhaitez réduire en fonction de vos besoins.
+
+Créer une nouvelle partition pour la récupération : Une fois que vous avez libéré de l'espace, cliquez avec le bouton droit sur l'espace non alloué et sélectionnez "Nouveau volume simple". Suivez les instructions pour spécifier la taille et les autres paramètres de la partition de récupération.
+
+Créer une partition pour les données (D:) : Une fois la partition de récupération créée, répétez le processus pour créer une nouvelle partition à utiliser pour les données (D:). Assurez-vous de spécifier la taille et les autres paramètres de la partition de données selon vos besoins.
+
+Formater les partitions : Après avoir créé les partitions, vous devrez les formater. Cliquez avec le bouton droit sur chaque nouvelle partition et sélectionnez "Formater...". Choisissez le système de fichiers (généralement NTFS) et suivez les instructions pour terminer le formatage.
+
+Ajout organisation 
+
+Appuyez sur les touches Win + R pour ouvrir la boîte de dialogue "Exécuter".
+
+Tapez "regedit" dans la boîte de dialogue Exécuter, puis appuyez sur Entrée. Cela ouvrira l'Éditeur du Registre.
+
+Dans l'Éditeur du Registre, naviguez jusqu'à la clé suivante :
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+
+Dans le volet de droite, recherchez la valeur nommée "RegisteredOrganization". Si elle n'existe pas, vous pouvez la créer.
+
+Cliquez avec le bouton droit sur "RegisteredOrganization" et sélectionnez "Modifier".
+
+Dans la boîte de dialogue Modifier la chaîne, saisissez le nom de l'organisation que vous souhaitez utiliser (dans ce cas, "Smir").
+
+Cliquez sur "OK" pour enregistrer les modifications.
+
+Fermez l'Éditeur du Registre.
+
+Pour changer le nom du groupe de travail dans Windows, suivez ces étapes :
+
+Cliquez sur le bouton Démarrer et faites un clic droit sur "Ordinateur" (ou "Ce PC" dans les versions plus récentes de Windows).
+
+Sélectionnez "Propriétés" dans le menu contextuel. Cela ouvrira la fenêtre des propriétés système.
+
+Dans la fenêtre des propriétés système, vous devriez voir une section indiquant le nom de l'ordinateur, le domaine et le groupe de travail. Cliquez sur "Paramètres système avancés" sur le côté gauche de la fenêtre. Cela ouvrira une nouvelle fenêtre intitulée "Propriétés système".
+
+Dans l'onglet "Nom de l'ordinateur", cliquez sur le bouton "Modifier...".
+
+Sélectionnez l'option "Changer de groupe de travail" si vous n'utilisez pas de domaine ou si vous voulez changer de groupe de travail.
+
+Dans la fenêtre qui s'ouvre, saisissez le nouveau nom du groupe de travail dans le champ prévu à cet effet.
+
+Cliquez sur "OK" pour enregistrer les modifications et fermer toutes les fenêtres.
+
+
+Sauvegarder le registre en cas d'ajout de clef :
+
+Ouvrir l'Éditeur du Registre : Appuyez sur les touches Win + R pour ouvrir la boîte de dialogue "Exécuter", puis tapez "regedit" et appuyez sur Entrée.
+
+Sélectionner la clé à sauvegarder : Naviguez dans l'Éditeur du Registre jusqu'à la clé que vous souhaitez sauvegarder. Vous pouvez sélectionner une clé spécifique ou sauvegarder une partie de la base de registre en sélectionnant une clé parente.
+
+Exporter la clé :
+
+Cliquez avec le bouton droit sur la clé que vous souhaitez sauvegarder.
+
+Sélectionnez "Exporter" dans le menu contextuel. Cela ouvrira une boîte de dialogue pour spécifier l'emplacement et le nom du fichier de sauvegarde.
+
+Spécifier l'emplacement et le nom du fichier de sauvegarde : Choisissez un emplacement sur votre ordinateur où vous souhaitez enregistrer le fichier de sauvegarde. Donnez un nom significatif au fichier pour que vous puissiez le retrouver facilement si nécessaire.
+
+Sauvegarder le fichier : Cliquez sur "Enregistrer" pour sauvegarder la clé sélectionnée dans un fichier REG. Assurez-vous de choisir un endroit sûr où vous pourrez facilement retrouver la sauvegarde en cas de besoin.
+
+
+Ajouter un user :
+
+Ouvrir les paramètres de compte utilisateur :
+
+Cliquez sur le bouton Démarrer, puis sur l'icône de votre profil utilisateur en haut à gauche du menu Démarrer (ou sur votre photo de profil si elle est affichée).
+
+Sélectionnez "Paramètres" dans le menu.
+
+Accéder aux paramètres de compte :
+
+Dans la fenêtre des paramètres, sélectionnez la section "Comptes".
+
+Ajouter un nouvel utilisateur :
+
+Sous la section "Familles et autres utilisateurs", cliquez sur "Ajouter un utilisateur".
+
+Créer le compte utilisateur standard :
+
+Dans la fenêtre qui s'ouvre, sélectionnez "Je n'ai pas les informations de connexion de cette personne".
+
+Ensuite, cliquez sur "Ajouter un utilisateur sans compte Microsoft" (ou "Ajouter un utilisateur local" dans certaines versions de Windows).
+
+Entrez le nom d'utilisateur souhaité, par exemple "User0X" où "X" est le numéro que vous avez tiré au sort.
+
+Définir le mot de passe :
+
+Après avoir créé le compte utilisateur, vous serez invité à définir un mot de passe pour ce compte. Entrez "User0X1234" comme mot de passe et confirmez-le.
+
+Terminer la création du compte :
+
+Une fois que vous avez défini le mot de passe, cliquez sur "Suivant" et suivez les instructions pour terminer la création du compte utilisateur.
+
+Vous pouvez ignorer la question "Ajouter des questions de sécurité", puisque vous avez déjà un mot de passe défini.
+
+Dans la fenêtre suivante, vous pouvez laisser les paramètres par défaut pour l'accès aux données, car vous n'avez pas besoin de restreindre l'accès dans ce cas.
+
+Terminer la configuration :
+
+Cliquez sur "Terminer" pour créer le compte utilisateur.
+
+
+
+Ajouter le pilote d'un produit inconnu :
+
+Utilisation du Gestionnaire de périphériques de Windows :
+
+Ouvrez le Gestionnaire de périphériques en appuyant sur les touches Win + X puis en sélectionnant "Gestionnaire de périphériques".
+
+Recherchez le périphérique pour lequel vous avez besoin de pilotes. Il peut apparaître sous forme d'un périphérique inconnu ou d'un périphérique avec un nom générique.
+
+Faites un clic droit sur le périphérique, sélectionnez "Propriétés", puis accédez à l'onglet "Détails".
+
+Dans le menu déroulant, sélectionnez "Numéro d'identification du matériel" ou "ID de l'instance du périphérique". Ces informations peuvent parfois fournir des indices sur la marque et le modèle du périphérique.
+
+Recherche en ligne basée sur les informations du périphérique :
+
+Copiez les informations que vous avez trouvées dans l'étape précédente.
+
+Collez ces informations dans un moteur de recherche en ligne pour voir si vous pouvez trouver des correspondances qui pourraient vous aider à identifier le périphérique.
+
+Utilisation d'outils d'identification de matériel :
+
+recherche de pilotes génériques :
+
+Si vous ne parvenez pas à identifier le périphérique spécifique, vous pouvez toujours essayer d'installer des pilotes génériques qui pourraient fonctionner. Par exemple, Windows inclut souvent des pilotes génériques pour certains types de périphériques, comme les cartes réseau ou les cartes graphiques intégrées.
+
+
+protection/sécurité
+
+Activation de Windows Defender :
+
+Windows Defender est généralement activé par défaut sur les versions récentes de Windows. Pour vérifier son statut et le configurer :
+Ouvrez le menu Démarrer et recherchez "Windows Security", puis ouvrez l'application.
+Dans Windows Security, accédez à "Protection contre les virus et menaces" et assurez-vous que la protection en temps réel est activée. Vous pouvez également explorer d'autres paramètres de protection.
+Activation de Windows Update :
+
+Bien que vous ne puissiez pas encore accéder à Internet, vous pouvez activer Windows Update pour qu'il recherche automatiquement les mises à jour dès que vous serez connecté à Internet :
+Allez dans les paramètres de Windows Update en recherchant "Windows Update" dans le menu Démarrer.
+Activez l'option "Rechercher les mises à jour automatiquement". Vous pouvez également configurer d'autres paramètres de mise à jour ici.
+Configuration du pare-feu Windows :
+
+Le pare-feu Windows est généralement activé par défaut, mais vous pouvez le configurer pour répondre à vos besoins spécifiques :
+Allez dans les paramètres du pare-feu Windows en recherchant "Pare-feu Windows" dans le menu Démarrer.
+Vous pouvez configurer les paramètres du pare-feu pour autoriser ou bloquer certaines connexions réseau une fois que vous serez connecté à Internet.
+Mises à jour hors ligne :
+
+Si vous avez la possibilité d'accéder à un autre ordinateur avec une connexion Internet, vous pouvez télécharger manuellement les dernières mises à jour de sécurité et les transférer vers votre PC à l'aide d'une clé USB ou d'un autre support de stockage externe.
+
+
+
+Configuration de l'adresse TCP/IP statique pour la carte filaire Ethernet (Eth0) :
+
+Allez dans les paramètres réseau de votre ordinateur.
+
+Trouvez la connexion Ethernet (Eth0) et accédez à ses propriétés.
+
+Sélectionnez l'option "Protocole Internet version 4 (TCP/IPv4)" et cliquez sur "Propriétés".
+
+Entrez l'adresse IP statique 192.168.150.20X avec un masque de sous-réseau /24.
+
+Configuration de l'adresse TCP/IP statique pour la carte Wi-Fi :
+
+Suivez des étapes similaires à celles ci-dessus, mais pour la connexion Wi-Fi.
+
+Entrez l'adresse IP statique 192.168.130.1X avec un masque de sous-réseau /24.
+
+Configuration de l'imprimante HP LaserJet 5025 :
+
+Accédez aux paramètres réseau de l'imprimante via son panneau de contrôle ou son interface Web.
+
+Entrez l'adresse IP statique 192.168.99.16 avec un masque de sous-réseau /24.
+
+Configuration du point d'accès :
+
+Accédez à l'interface de configuration du point d'accès via un navigateur Web.
+
+Entrez l'adresse IP statique 192.168.99.71 avec un masque de sous-réseau /24.
+
+Configurez le SSID comme "WIFI#VDC@2023" et la clé de cryptage comme "Wlan#Vdc@2023".
+
+
+
+Configuration de la messagerie :
+
+Dans le client de messagerie (par exemple, Outlook ou Gmail), ajoutez un nouveau compte de messagerie.
+
+Entrez l'adresse mail "tpc0x.vdc@gmail.com" et les informations d'identification du serveur de messagerie ("tcp0x.vdc@gmail.com" comme login et "Vdc@2023" comme mot de passe).
+
+Configurez les paramètres SMTP pour envoyer un mail de confirmation à "evaluateurvdctpc@gmail.com".
+
+
+Configuration des DNS :
+
+Pour la configuration Wi-Fi, utilisez les DNS de Google en entrant 8.8.8.8 et 8.8.4.4 dans les paramètres TCP/IP de la connexion Wi-Fi.
+
+
+Configuration du port HTTPS pour le routeur :
+
+Accédez à l'interface de configuration du routeur via un navigateur Web.
+Activez le protocole HTTPS et configurez le port correspondant (généralement le port 443).
