@@ -1,4 +1,4 @@
-user :
+Arriver a l'endroit ou l'on gere les user et les groupes :
 lusrmgr.msc
 
 
