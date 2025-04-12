@@ -2,6 +2,9 @@ import time
 import logging
 import asyncio
 import requests
+import random
+import os
+import glob
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,45 +16,55 @@ import pyautogui
 import google.generativeai as genai
 import re
 
-# Configuration du logging
 logging.basicConfig(level=logging.INFO)
 
-# Clé API Gemini + modèle à jour
 GEMINI_API_KEY = "AIzaSyDVfIrN6wSf6KBofx9V1my9hX5q90ST9tw"
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('models/gemini-1.5-flash')
 
-# Webhook Discord
 DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1358636041270989041/TujDmyYjkPznIch9iZZwaJd09kp-5KoSRPcDC2SUgb7Qy8T7JP_82jLe4fVMncC3wptH"
 
-# Fonction d'envoi de message à Discord
 def notify_discord(message):
     try:
-        requests.post(DISCORD_WEBHOOK_URL, json={"content": message})
-    except Exception as e:
-        logging.error(f"Erreur lors de l'envoi Discord : {e}")
+        now = time.strftime("[%H:%M:%S]")
+        requests.post(DISCORD_WEBHOOK_URL, json={"content": f"{now} {message}"})
+    except:
+        pass  # Silence totale
 
-# Lancer Edge + Selenium
 def setup_driver():
     options = Options()
     options.headless = False
+    options.use_chromium = True
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("start-maximized")
+    options.add_argument("disable-infobars")
+    options.add_argument("--disable-extensions")
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36")
+
     edge_driver_path = "C:/Users/Meddy/OneDrive - student.helmo.be/Bureau/msedgedriver.exe"
     service = Service(edge_driver_path)
     driver = webdriver.Edge(service=service, options=options)
+
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        "source": """
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined
+            })
+        """
+    })
+
     driver.set_window_size(1920, 1080)
     return driver
 
-# Recadrer le captcha
 def crop_captcha_image(screenshot_path, crop_box):
     with Image.open(screenshot_path) as img:
-        logging.info(f"Taille image avant recadrage : {img.size}")
         cropped_img = img.crop(crop_box)
         cropped_screenshot_path = screenshot_path.replace(".png", "_cropped.png")
         cropped_img.save(cropped_screenshot_path)
-        logging.info(f"Image recadrée enregistrée : {cropped_screenshot_path}")
         return cropped_screenshot_path
 
-# Envoyer à Gemini pour lire le texte
 async def send_image_to_gemini_api(image_path, prompt="Lis uniquement le texte du captcha, sans explication :"):
     try:
         with open(image_path, "rb") as image_file:
@@ -59,19 +72,25 @@ async def send_image_to_gemini_api(image_path, prompt="Lis uniquement le texte d
         response = model.generate_content([{"mime_type": "image/png", "data": image_data}, {"text": prompt}])
         response.resolve()
         return response.text.strip()
-    except Exception as e:
-        logging.error(f"Erreur Gemini : {e}")
+    except:
         return None
 
-# Filtrer le texte captcha
 def filter_captcha_solution(solution):
-    match = re.search(r'\b[A-Z0-9]{5,}\b', solution)
+    match = re.search(r'\b[A-Z0-9]{3,}\b', solution)
     if match:
         return match.group(0)
     return solution.strip()
 
-# Fonction principale
-async def vote_and_generate():
+def cleanup_captcha_images():
+    screenshot_dir = "C:/Users/Meddy/OneDrive/Images/Screenshots/"
+    for file in glob.glob(os.path.join(screenshot_dir, "captcha_*.png")):
+        try:
+            os.remove(file)
+            logging.info(f"🗑️ Supprimé : {file}")
+        except:
+            pass
+
+async def vote(pseudo):
     driver = setup_driver()
     try:
         notify_discord("🔄 Début du processus de vote automatique...")
@@ -86,17 +105,16 @@ async def vote_and_generate():
         pseudo_input = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "playername"))
         )
-        pseudo_input.send_keys("Tekashi Nomura")
-        notify_discord("📝 Pseudo inséré : Tekashi Nomura")
+        pseudo_input.send_keys(pseudo)
+        notify_discord(f"📝 Pseudo inséré : {pseudo}")
 
         time.sleep(3)
-
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         screenshot_path = f"C:/Users/Meddy/OneDrive/Images/Screenshots/captcha_{timestamp}.png"
         driver.save_screenshot(screenshot_path)
         notify_discord("📸 Screenshot du captcha capturé.")
 
-        captcha_box = (1008, 780, 1450, 925)  # À ajuster si besoin
+        captcha_box = (1008, 780, 1450, 925)
         cropped_path = crop_captcha_image(screenshot_path, captcha_box)
         notify_discord("✂️ Image captcha recadrée, envoi à Gemini...")
 
@@ -104,7 +122,7 @@ async def vote_and_generate():
         if captcha_solution:
             captcha_solution = filter_captcha_solution(captcha_solution)
             logging.info(f"Solution captchée : {captcha_solution}")
-            notify_discord(f"✅ Solution captcha trouvée : `{captcha_solution}`")
+            notify_discord(f"✅ Solution captcha trouvée : {captcha_solution}")
 
             time.sleep(2)
             pyautogui.press("tab", presses=4, interval=0.2)
@@ -112,8 +130,8 @@ async def vote_and_generate():
             time.sleep(3)
             pyautogui.press("tab", presses=2, interval=0.2)
             pyautogui.press("enter")
+            await asyncio.sleep(30)
             notify_discord("📤 Vote soumis avec succès !")
-
         else:
             notify_discord("⚠️ Aucune solution détectée par Gemini !")
 
@@ -121,15 +139,37 @@ async def vote_and_generate():
         logging.error(f"Erreur du script : {e}")
         notify_discord(f"❌ Erreur dans le script : {e}")
     finally:
-        time.sleep(15)
         driver.quit()
-        notify_discord("🛑 Navigateur fermé. Script terminé.")
+        cleanup_captcha_images()
+        notify_discord("🛑 Navigateur fermé et captures supprimées.")
 
-# Boucle d'exécution
-if __name__ == "__main__":
+def switch_wifi(network_name):
+    try:
+        logging.info(f"Changement de réseau Wi-Fi vers {network_name}...")
+        os.system(f"netsh wlan connect name={network_name}")
+        notify_discord(f"📶 Connecté au réseau : {network_name}")
+    except Exception as e:
+        logging.error(f"Erreur lors du changement de réseau Wi-Fi : {e}")
+        notify_discord(f"❌ Erreur réseau : {e}")
+
+async def main():
     while True:
-        logging.info("Début de l'exécution du script...")
-        notify_discord("🕒 Lancement d'un nouveau vote automatique.")
-        asyncio.run(vote_and_generate())
-        notify_discord("⏳ Prochain vote dans 2 heures et 1 minute...")
-        time.sleep(2 * 3600 + 60)
+        notify_discord("🕒 Début du script complet.")
+        
+        switch_wifi("Orange-BsfDP")
+        await asyncio.sleep(30)
+        await vote("Tekashi Nomura")
+
+        switch_wifi("Medoce")
+        await asyncio.sleep(30)
+        await vote("Tekashi Nomura")
+
+        switch_wifi("Orange-BsfDP")
+        await asyncio.sleep(30)
+        notify_discord("🔁 Script terminé, attente avant la prochaine exécution.")
+
+        pause = random.randint(7200, 7260)
+        await asyncio.sleep(pause)
+
+if __name__ == "__main__":
+    asyncio.run(main())
